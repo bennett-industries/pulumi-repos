@@ -1,0 +1,3 @@
+export GITHUB_TOKEN=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
+pulumi config set githb:token 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 --secret
+

@@ -1,0 +1,5 @@
+config:
+  github:organization: bennett-industries
+  github:owner: bennett-industries
+  github:token:
+    secure: AAABAPVUQXhj+mzOh5qxB0YL2rNcgh7NwUrwEm5fj97zKIAaXQE1xXT2pEm0rnyRw5gdcgwssK+uP1sOLZntwHF7w2PjlX9QG4yzttxjzW6HMlk8Pxy+fGu2ukPOHdubnm/x4CfizygWNM+zcEX8hvsEt1c2kShIERg3LCI=
