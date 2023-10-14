@@ -3,3 +3,61 @@ config:
   github:owner: bennett-industries
   github:token:
     secure: AAABAPVUQXhj+mzOh5qxB0YL2rNcgh7NwUrwEm5fj97zKIAaXQE1xXT2pEm0rnyRw5gdcgwssK+uP1sOLZntwHF7w2PjlX9QG4yzttxjzW6HMlk8Pxy+fGu2ukPOHdubnm/x4CfizygWNM+zcEX8hvsEt1c2kShIERg3LCI=
+  bennett-industries:data:
+    repos:
+      - name: "vivid-fake-repo-test1"
+        active: true
+        desc: "fake vivid repo created by pulumi 1"
+        environments:
+          - name: "devel"
+          - name: "staging"
+          - name: "prod"
+        envvars:
+          - name: "key"
+            environment: "staging"
+            value: "value1"
+        secrefs:
+          - name: "key"
+          - name: "key"
+      - name: "vivid-fake-repo-test2"
+        active: true
+        desc: "fake vivid repo created by pulumi 2"
+        environments:
+          - name: "devel"
+          - name: "staging"
+          - name: "prod"
+        envvars:
+          - name: "key"
+            environment: "staging"
+            value: "value1"
+        secrefs:
+          - name: "key"
+          - name: "key"
+      - name: "vivid-fake-repo-test3"
+        active: true
+        desc: "fake vivid repo created by pulumi 3"
+        environments:
+          - name: "devel"
+          - name: "staging"
+          - name: "prod"
+        envvars:
+          - name: "key"
+            environment: "staging"
+            value: "value1"
+        secrefs:
+          - name: "key"
+          - name: "key"
+      - name: "vivid-fake-repo-test4"
+        active: true
+        desc: "fake vivid repo created by pulumi 4"
+        environments:
+          - name: "devel"
+          - name: "staging"
+          - name: "prod"
+        envvars:
+          - name: "key"
+            environment: "staging"
+            value: "value1"
+        secrefs:
+          - name: "key"
+          - name: "key"

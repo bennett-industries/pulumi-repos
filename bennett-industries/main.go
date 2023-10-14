@@ -1,30 +1,49 @@
 package main
 
 import (
-  "log"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+  "github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 )
 
-type repo struct {
-  Name string
-  Desc string
+type ConfigData struct {
+  Repos []Repo `json:"repos" yaml:"repos"`
 }
 
-var repos []repo
+type Repo struct {
+  Active bool `json:"active" yaml:"active"`
+  Name string `json:"name" yaml:"name"`
+  Desc string `json:"desc" yaml:"desc"`
+  Environments []env `json:"environments" yaml:"environments"`
+  EnvVars []envvar `json:"envvars" yaml:"envvars"`
+  SecRefs []secref `json:"secrefs" yaml:"secrefs"`
+}
+
+type envvar struct {
+  Name string `json:"name" yaml:"name"`
+  Environment string  `json:"environment" yaml:"environment"`
+  Value string `json:"value" yaml:"value"`
+}
+
+type secref struct {
+  Name string `json:"name" yaml:"name"`
+}
+
+type env struct {
+  Name string `json:"name" yaml:"name"`
+}
 
 func main() {
-  log.Println("Outside of pulumi run")
-
 	pulumi.Run(func(ctx *pulumi.Context) error {
 
-    repos = append(repos, repo{Name: "vivid-fake-repo-test1", Desc: "Pulumi test repo 1"})
-    repos = append(repos, repo{Name: "vivid-fake-repo-test2", Desc: "Pulumi test repo 2"})
-    repos = append(repos, repo{Name: "vivid-fake-repo-test3", Desc: "Pulumi test repo 3"})
-    repos = append(repos, repo{Name: "vivid-fake-repo-tester", Desc: "Pulumi test repo 4"})
+    // Import repo data from config
+    var cfgData ConfigData
+    cfg := config.New(ctx, "")
+    cfg.RequireObject("data", &cfgData)
 
-    for _, s := range repos {
-        repoSetup(ctx, s.Name, s.Desc)
-    }
+    // Create Repos from pulumi config
+		for _, r := range cfgData.Repos {
+			repoSetup(ctx, r)
+		}
 
 		return nil
 	})
