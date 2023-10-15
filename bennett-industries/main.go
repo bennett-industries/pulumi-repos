@@ -43,6 +43,7 @@ func main() {
 		// Create Repos from pulumi config
 		for _, r := range cfgData.Repos {
 			repoSetup(ctx, r)
+      fileMgmt(ctx, r)
 		}
 
 		return nil
