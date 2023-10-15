@@ -1,63 +1,63 @@
 config:
-  github:organization: bennett-industries
-  github:owner: bennett-industries
-  github:token:
-    secure: AAABAPVUQXhj+mzOh5qxB0YL2rNcgh7NwUrwEm5fj97zKIAaXQE1xXT2pEm0rnyRw5gdcgwssK+uP1sOLZntwHF7w2PjlX9QG4yzttxjzW6HMlk8Pxy+fGu2ukPOHdubnm/x4CfizygWNM+zcEX8hvsEt1c2kShIERg3LCI=
   bennett-industries:data:
     repos:
-      - name: "vivid-fake-repo-test1"
-        active: true
+      - active: true
         desc: "fake vivid repo created by pulumi 1"
         environments:
           - name: "devel"
           - name: "staging"
           - name: "prod"
         envvars:
-          - name: "key"
-            environment: "staging"
+          - environment: "staging"
+            name: "key"
             value: "value1"
+        name: "vivid-fake-repo-test1"
         secrefs:
           - name: "key"
           - name: "key"
-      - name: "vivid-fake-repo-test2"
-        active: true
+      - active: true
         desc: "fake vivid repo created by pulumi 2"
         environments:
           - name: "devel"
           - name: "staging"
           - name: "prod"
         envvars:
-          - name: "key"
-            environment: "staging"
+          - environment: "staging"
+            name: "key"
             value: "value1"
+        name: "vivid-fake-repo-test2"
         secrefs:
           - name: "key"
           - name: "key"
-      - name: "vivid-fake-repo-test3"
-        active: true
+      - active: true
         desc: "fake vivid repo created by pulumi 3"
         environments:
           - name: "devel"
           - name: "staging"
           - name: "prod"
         envvars:
-          - name: "key"
-            environment: "staging"
+          - environment: "staging"
+            name: "key"
             value: "value1"
+        name: "vivid-fake-repo-test3"
         secrefs:
           - name: "key"
           - name: "key"
-      - name: "vivid-fake-repo-test4"
-        active: true
+      - active: true
         desc: "fake vivid repo created by pulumi 4"
         environments:
           - name: "devel"
           - name: "staging"
           - name: "prod"
         envvars:
-          - name: "key"
-            environment: "staging"
+          - environment: "staging"
+            name: "key"
             value: "value1"
+        name: "vivid-fake-repo-test4"
         secrefs:
           - name: "key"
           - name: "key"
+  github:organization: bennett-industries
+  github:owner: bennett-industries
+  github:token:
+    secure: AAABAL6gMyS2IgPCm+uvAMEm+qbSwDkgyNdTKcOhibSfi4Xzg6vUa11kEFoimPYlDxfVMyDx9Zukjmm1KuvP+hwponrYntQKHUAc2jQE0g33+vA5LAwQ9SyocYLCi4e1WLy9Jxz/C48kdfmK+ebPoEdly7swItBWU6iKE2c=
